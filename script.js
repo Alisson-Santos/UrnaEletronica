@@ -6,18 +6,19 @@ let lateral = document.querySelector('.d-1-right');
 let numeros = document.querySelector('.d-1-3');
 
 let etapaAtual = 0;
+let numero = ''
 
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
 
-    let numeroHtml = '';
+    let numeroHtml = ' ';
     
     for(let i=0;i<etapa.numeros;i++) {
         if(i === 0){
-        numeroHtml += 'div class="numero pisca "></div>';
+        numeroHtml += '<div class="numero pisca "></div>';
     }   else {
-        numeroHtml += 'div class="numero"></div>';
+        numeroHtml += '<div class="numero"></div>';
     
     }
 }
@@ -30,22 +31,18 @@ function comecarEtapa() {
     numeros.innerHTML = numeroHtml;
 }
 function atualizaInterface(){
-    alert("Finalizou de digitar o voto!");
 }
 function clicou(n) {
     let elNumero = document.querySelector('.numero.pisca');
     if(elNumero !== null) {
         elNumero.innerHTML = n;
-        numero = `${numero}${n}`;
+        numeros = `${numero}${n}`;
 
         elNumero.classList.remove('pisca');
-        if(elNumero.nextElementSibling !== null){
-            elNumero.nextElementSibling.classList.add('pisca');
-        } else {
-           atualizaInterface(); 
+        elNumero.nextElementSibling.classList.add('pisca');
         }
     }
-}
+
 function branco() {
     alert("Clicou em BRANCO!");
 }
@@ -55,3 +52,5 @@ function Corrige() {
 function Confirma() {
     alert("Clicou em CONFIRMA!");
 }
+
+comecarEtapa();
