@@ -32,9 +32,28 @@ function comecarEtapa() {
 }
 
 function atualizaInterface() {
-  console.log("Atualizando interface");
-  console.log(numero);
+    let etapa = etapas[etapaAtual];
+    let candidato = etapa.candidatos.filter((item)=>{
+        if(item.numero === numero)
+          {return true;}
+        else 
+          {return false;}
 
+    });
+    if(candidato.length > 0) {
+        candidato = candidato[0];
+        seuVotoPara.style.display = 'block';
+        aviso.style.display = 'block';
+        descricao.innerHTML = `Nome: ${candidato.nome}<br/> Partido: ${candidato.partido}`;
+
+        let fotosHtml = '';
+        for(let i in candidato.fotos) {
+            fotosHtml += `<div class="d-1-imagem"> <img src="imagens/${candidato.fotos[i].url}"" />${candidato.fotos[i].legenda}</div>`;
+        }
+        lateral.innerHTML = fotosHtml;
+
+
+    }
 }
 function clicou(n) 
 {
