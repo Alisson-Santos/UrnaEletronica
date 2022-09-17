@@ -6,50 +6,57 @@ let lateral = document.querySelector('.d-1-right');
 let numeros = document.querySelector('.d-1-3');
 
 let etapaAtual = 0;
-let numero = ''
+let numero = '';
 
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
 
-    let numeroHtml = ' ';
+    let numeroHtml = '';
     
     for(let i=0;i<etapa.numeros;i++) {
         if(i === 0){
-        numeroHtml += '<div class="numero pisca "></div>';
-    }   else {
-        numeroHtml += '<div class="numero"></div>';
+            numeroHtml += '<div class="numero pisca"></div>';
+        }   else {
+            numeroHtml += '<div class="numero"></div>';
     
+        }
     }
-}
 
-    seuVotoPara.getElementsByClassName.display = 'none';
+    seuVotoPara.style.display = 'none';
     cargo.innerHTML = etapa.titulo;
     descricao.innerHTML = '';
     aviso.style.display = 'none';
     lateral.innerHTML = '';
     numeros.innerHTML = numeroHtml;
 }
-function atualizaInterface(){
+
+function atualizaInterface() {
+  console.log("Atualizando interface");
+  console.log(numero);
+
 }
-function clicou(n) {
-    let elNumero = document.querySelector('.numero.pisca');
-    if(elNumero !== null) {
-        elNumero.innerHTML = n;
-        numeros = `${numero}${n}`;
+function clicou(n) 
+{
+     let elNumero = document.querySelector('.numero.pisca');
+    if(elNumero !== null)
+    {
+         elNumero.innerHTML = n;
+         numero = `${numero}${n}`;
 
-        elNumero.classList.remove('pisca');
-        elNumero.nextElementSibling.classList.add('pisca');
-        }
+         elNumero.classList.remove('pisca');
+        if(elNumero.nextElementSibling !== null) 
+          {elNumero.nextElementSibling.classList.add('pisca');} 
+        else { atualizaInterface();}
     }
-
+}
 function branco() {
     alert("Clicou em BRANCO!");
 }
-function Corrige() {
+function corrige() {
     alert("Clicou em CORRIGE!");
 }
-function Confirma() {
+function confirma() {
     alert("Clicou em CONFIRMA!");
 }
 
