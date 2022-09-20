@@ -31,7 +31,7 @@ let etapas = [
             partido: '123', 
             fotos: [
                 {url: '10.jpg', legenda: 'Prefeito'},
-                {url: '11.jpg', legenda: 'Vice-Prefeito', small: false}
+                {url: '11.webp', legenda: 'Vice-Prefeito', small: false}
             ]
         },
         {
@@ -39,8 +39,8 @@ let etapas = [
             nome: 'Super-choque',
             partido: 'qwert', 
             fotos: [
-                {url: '20.jpg', legenda: 'Prefeito'},
-                {url: '22.jpg', legenda: 'Vice-Prefeito', small: false}
+                {url: '20.webp', legenda: 'Prefeito'},
+                {url: '22.webp', legenda: 'Vice-Prefeito', small: false}
             ]
         },
        ]
